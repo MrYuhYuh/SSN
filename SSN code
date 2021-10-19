@@ -1,0 +1,44 @@
+import java.util.Scanner; 
+//Jaden Rivera
+//CSC-111-D01
+public class socailNum {
+
+	public static void main(String[] args) {
+		Scanner input = new Scanner(System.in);
+		System.out.println("Please enter a SSN:");
+		String ssn = input.nextLine();
+		
+		input.close();
+		boolean isValid = true;
+        if (ssn.length() == 9) {
+            isValid = isValid && Character.isDigit(ssn.charAt(0));
+            isValid = isValid && Character.isDigit(ssn.charAt(1));
+            isValid = isValid && Character.isDigit(ssn.charAt(2));
+            isValid = isValid && Character.isDigit(ssn.charAt(3));
+            isValid = isValid && Character.isDigit(ssn.charAt(4));
+            isValid = isValid && Character.isDigit(ssn.charAt(5));
+            isValid = isValid && Character.isDigit(ssn.charAt(6));
+            isValid = isValid && Character.isDigit(ssn.charAt(7));
+            isValid = isValid && Character.isDigit(ssn.charAt(8));
+        }
+        else if (ssn.length() == 11) {
+            isValid = isValid && Character.isDigit(ssn.charAt(0));
+            isValid = isValid && Character.isDigit(ssn.charAt(1));
+            isValid = isValid && Character.isDigit(ssn.charAt(2));
+            isValid = isValid && ssn.charAt(3) == '-';
+            isValid = isValid && Character.isDigit(ssn.charAt(4));
+            isValid = isValid && Character.isDigit(ssn.charAt(5));
+            isValid = isValid && ssn.charAt(6) == '-';
+            isValid = isValid && Character.isDigit(ssn.charAt(7));
+            isValid = isValid && Character.isDigit(ssn.charAt(8));
+            isValid = isValid && Character.isDigit(ssn.charAt(9));
+            isValid = isValid && Character.isDigit(ssn.charAt(10));
+        }
+        else
+            isValid = false;
+        System.out.println(ssn + " is " + ((isValid) ? "a valid" : "an invalid") + " SSN.");
+
+		
+	}
+
+}
